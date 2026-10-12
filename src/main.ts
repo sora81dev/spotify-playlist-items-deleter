@@ -104,7 +104,7 @@ hono.get("/api/v1/auth", async (c) => {
   );
 });
 
-hono.get(`/api/v1/callback/${redirect_uri_path}`, async (c) => {
+hono.get(`/${redirect_uri_path}`, async (c) => {
   if (!c.req.query("code")) return c.status(400);
   code = String(c.req.query("code"));
 
